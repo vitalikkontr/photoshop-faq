@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часто задаваемые вопросы (FAQ) — Adobe Photoshop</title>
+    <!-- FontAwesome for Photoshop-like Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ps-bg-darkest: #1e1e1e;
+            --ps-bg-dark: #282828;
+            --ps-bg-medium: #323232;
+            --ps-bg-light: #3c3c3c;
+            --ps-bg-hover: #484848;
+            --ps-border: #181818;
+            --ps-border-light: #4a4a4a;
+            --ps-accent: #0078d4;
+            --ps-accent-hover: #1084d8;
+            --ps-accent-glow: rgba(0, 120, 212, 0.3);
+            --ps-text-main: #d4d4d4;
+            --ps-text-bright: #ffffff;
+            --ps-text-muted: #8c8c8c;
+            --ps-text-gold: #ffbd2e;
+            --ps-ps-blue: #31a8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: text;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--ps-bg-darkest);
+            color: var(--ps-text-main);
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- PHOTOSHOP TOP BAR --- */
+        .ps-topbar {
+            background-color: var(--ps-bg-dark);
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            border-bottom: 1px solid var(--ps-border);
+            font-size: 12px;
+            color: var(--ps-text-muted);
+            user-select: none;
+        }
+
+        .ps-menu {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .ps-logo {
+            width: 24px;
+            height: 24px;
+            background-color: #001e36;
+            color: var(--ps-ps-blue);
+            font-weight: 800;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            border: 1.5px solid var(--ps-ps-blue);
+            margin-right: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .ps-menu-items span {
+            margin-right: 14px;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .ps-menu-items span:hover {
+            color: var(--ps-text-bright);
+        }
+
+        .ps-top-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ps-badge {
+            background: var(--ps-bg-light);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            color: var(--ps-text-main);
+            border: 1px solid var(--ps-border-light);
+        }
+
+        /* --- MAIN WORKSPACE LAYOUT --- */
+        .ps-workspace {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 62px);
+            overflow: hidden;
+        }
+
+        /* --- LEFT TOOLBAR --- */
+        .ps-toolbar {
+            width: 48px;
+            background-color: var(--ps-bg-dark);
+            border-right: 1px solid var(--ps-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 8px;
+            gap: 12px;
+            user-select: none;
+            z-index: 10;
+        }
+
+        .ps-tool-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ps-text-muted);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 14px;
+        }
+
+        .ps-tool-icon:hover {
+            background-color: var(--ps-bg-light);
+            color: var(--ps-text-bright);
+        }
+
+        .ps-tool-icon.active {
+            background-color: var(--ps-bg-medium);
+            color: var(--ps-ps-blue);
+            box-shadow: inset 2px 0 0 var(--ps-ps-blue);
+        }
+
+        .ps-toolbar-divider {
+            width: 24px;
+            height: 1px;
+            background-color: var(--ps-border-light);
+            margin: 4px 0;
+        }
+
+        /* --- CANVAS / CONTENT AREA --- */
+        .ps-canvas-area {
+            flex: 1;
+            background-color: var(--ps-bg-darkest);
+            background-image: 
+                radial-gradient(var(--ps-bg-medium) 1px, transparent 0);
+            background-size: 24px 24px;
+            overflow-y: auto;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            scroll-behavior: smooth;
+        }
+
+        .ps-document {
+            background-color: var(--ps-bg-dark);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 8px;
+            border: 1px solid var(--ps-border-light);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            padding: 48px;
+            margin-bottom: 40px;
+        }
+
+        .doc-header {
+            border-bottom: 2px solid var(--ps-bg-light);
+            padding-bottom: 24px;
+            margin-bottom: 36px;
+        }
+
+        .doc-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ps-text-bright);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .doc-subtitle {
+            color: var(--ps-text-muted);
+            font-size: 13px;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SECTION STYLING */
+        .faq-section {
+            margin-bottom: 36px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--ps-ps-blue);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(49, 168, 255, 0.2);
+        }
+
+        .section-title i {
+            font-size: 16px;
+        }
+
+        /* CARD / ACCORDION STYLING */
+        .faq-card {
+            background-color: var(--ps-bg-medium);
+            border: 1px solid var(--ps-border);
+            border-radius: 6px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .faq-card:hover {
+            border-color: var(--ps-border-light);
+        }
+
+        .faq-header {
+            padding: 16px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ps-text-bright);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.02);
+            transition: background-color 0.2s;
+        }
+
+        .faq-header:hover {
+            background-color: var(--ps-bg-light);
+        }
+
+        .faq-header .toggle-icon {
+            font-size: 12px;
+            color: var(--ps-text-muted);
+            transition: transform 0.3s;
+        }
+
+        .faq-card.open .faq-header .toggle-icon {
+            transform: rotate(180deg);
+            color: var(--ps-ps-blue);
+        }
+
+        .faq-body {
+            padding: 0 20px 20px 20px;
+            color: var(--ps-text-main);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-card:not(.open) .faq-body {
+            display: none;
+        }
+
+        .faq-body p {
+            margin-bottom: 12px;
+        }
+
+        .faq-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* LIST STYLING */
+        .faq-body ul {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 8px;
+        }
+
+        .faq-body li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        .faq-body li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--ps-ps-blue);
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        /* SPECIAL TEXT ELEMENTS */
+        .file-path, code {
+            font-family: 'Fira Code', monospace;
+            background-color: var(--ps-bg-darkest);
+            color: #e6c07b;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12.5px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: inline-block;
+            word-break: break-all;
+            margin: 4px 0;
+        }
+
+        .path-block {
+            display: block;
+            background-color: var(--ps-bg-darkest);
+            padding: 10px 14px;
+            border-left: 3px solid var(--ps-ps-blue);
+            margin: 10px 0;
+            color: #98c379;
+        }
+
+        .warning-box {
+            background-color: rgba(229, 192, 123, 0.08);
+            border-left: 3px solid var(--ps-text-gold);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 4px 4px 0;
+            color: #e5c07b;
+        }
+
+        /* --- RIGHT PANELS --- */
+        .ps-panels {
+            width: 280px;
+            background-color: var(--ps-bg-dark);
+            border-left: 1px solid var(--ps-border);
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+        }
+
+        .ps-panel-group {
+            border-bottom: 1px solid var(--ps-border);
+        }
+
+        .ps-panel-header {
+            background-color: var(--ps-bg-medium);
+            padding: 8px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--ps-text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ps-panel-body {
+            padding: 14px;
+        }
+
+        /* NAVIGATION LINKS PANEL */
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-bottom: 4px;
+        }
+
+        .nav-list a {
+            color: var(--ps-text-main);
+            text-decoration: none;
+            font-size: 12px;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+
+        .nav-list a:hover {
+            background-color: var(--ps-bg-light);
+            color: var(--ps-text-bright);
+        }
+
+        /* SEARCH IN WORKSPACE */
+        .ps-search {
+            width: 100%;
+            background-color: var(--ps-bg-darkest);
+            border: 1px solid var(--ps-border-light);
+            color: var(--ps-text-bright);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 12px;
+            outline: none;
+        }
+
+        .ps-search:focus {
+            border-color: var(--ps-accent);
+        }
+
+        /* STATUS BAR AT BOTTOM */
+        .ps-statusbar {
+            height: 24px;
+            background-color: var(--ps-bg-dark);
+            border-top: 1px solid var(--ps-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            font-size: 11px;
+            color: var(--ps-text-muted);
+            user-select: none;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .ps-panels {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ps-toolbar {
+                display: none;
+            }
+            .ps-canvas-area {
+                padding: 12px;
+            }
+            .ps-document {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP MENU BAR -->
+    <header class="ps-topbar">
+        <div class="ps-menu">
+            <div class="ps-logo">Ps</div>
+            <div class="ps-menu-items">
+                <span>Файл</span>
+                <span>Редактирование</span>
+                <span>Изображение</span>
+                <span>Слои</span>
+                <span>Шрифт</span>
+                <span>Выделение</span>
+                <span>Фильтр</span>
+                <span>Справка</span>
+            </div>
+        </div>
+        <div class="ps-top-controls">
+            <span class="ps-badge">FAQ Workspace v2026</span>
+            <i class="fa-solid fa-window-minimize"></i>
+            <i class="fa-regular fa-square"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </header>
+
+    <!-- WORKSPACE CONTAINER -->
+    <div class="ps-workspace">
+
+        <!-- LEFT TOOLBAR -->
+        <aside class="ps-toolbar">
+            <div class="ps-tool-icon active" title="Перемещение (V)"><i class="fa-solid fa-mouse-pointer"></i></div>
+            <div class="ps-tool-icon" title="Прямоугольная область (M)"><i class="fa-regular fa-square"></i></div>
+            <div class="ps-tool-icon" title="Лассо (L)"><i class="fa-solid fa-vector-square"></i></div>
+            <div class="ps-tool-icon" title="Быстрое выделение (W)"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div class="ps-toolbar-divider"></div>
+            <div class="ps-tool-icon" title="Раскройка (C)"><i class="fa-solid fa-crop-simple"></i></div>
+            <div class="ps-tool-icon" title="Кисть устранения точечных дефектов (J)"><i class="fa-solid fa-bandage"></i></div>
+            <div class="ps-tool-icon" title="Кисть (B)"><i class="fa-solid fa-paint-brush"></i></div>
+            <div class="ps-tool-icon" title="Штамп (S)"><i class="fa-solid fa-stamp"></i></div>
+            <div class="ps-toolbar-divider"></div>
+            <div class="ps-tool-icon" title="Текст (T)"><i class="fa-solid fa-font"></i></div>
+            <div class="ps-tool-icon" title="Заливка (G)"><i class="fa-solid fa-fill-drip"></i></div>
+            <div class="ps-tool-icon" title="Рука (H)"><i class="fa-regular fa-hand"></i></div>
+            <div class="ps-tool-icon" title="Масштаб (Z)"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </aside>
+
+        <!-- MAIN CANVAS / MAIN CONTENT -->
+        <main class="ps-canvas-area">
+            <article class="ps-document">
+
+                <div class="doc-header">
+                    <h1 class="doc-title">
+                        <i class="fa-solid fa-circle-question" style="color: var(--ps-ps-blue);"></i>
+                        Часто задаваемые вопросы (FAQ)
+                    </h1>
+                    <div class="doc-subtitle">Инструкции, решение проблем и руководства по Adobe Photoshop</div>
+                </div>
+
+                <!-- SECTION 1 -->
+                <section class="faq-section" id="section-1">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-download"></i>
+                        Установка и системные требования
+                    </h2>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Проблема с отображением окна установщика</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Если во время установки кнопка «Продолжить» (Continue) оказывается за пределами окна и её невозможно нажать мышью, попробуйте управлять установщиком с клавиатуры. Для перехода между элементами интерфейса используйте клавишу TAB. Последовательно переключайтесь между пунктами, пока фокус не окажется на необходимой кнопке, затем нажмите Enter.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Уведомление об отсутствии поддержки SSE 4.2</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>При запуске установщика может появиться сообщение о необходимости поддержки SSE 4.2 или более новой версии этой инструкции процессором. Это связано с аппаратными требованиями Photoshop 2021 и более поздних выпусков. Согласно информации Adobe, соответствующий набор инструкций обязателен для работы программы. Если ваш процессор его не поддерживает, установить и использовать данную версию Photoshop штатными средствами не получится.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Сбой при установке программы</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Если установка завершается с ошибкой без понятного описания причины, в первую очередь стоит определить её код и изучить подробности сбоя. В этом поможет официальная документация Adobe по устранению ошибок установки.</p>
+                            <p>Дополнительную информацию можно найти в журнале установки, расположенном по следующему адресу:</p>
+                            <div class="path-block">C:\Program Files (x86)\Common Files\Adobe\Installers\Install.log</div>
+                            <p>В журнале фиксируются сведения о процессе установки, которые могут помочь определить источник проблемы и подобрать способ её устранения.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2 -->
+                <section class="faq-section" id="section-2">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-cubes"></i>
+                        Состав сборки и дополнительные компоненты
+                    </h2>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Почему в установщике отсутствует Remove Tool Advanced Components?</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Дополнительный пакет Remove Tool Advanced Components занимает около 5 ГБ дискового пространства и предъявляет повышенные требования к аппаратному обеспечению компьютера. Поскольку этот функционал востребован далеко не всеми пользователями, он не включён в основную сборку.</p>
+                            <p>Для тех, кому необходимы расширенные возможности инструмента Remove Tool, подготовлен отдельный вариант — Adobe Photoshop Remove Tool AI, в котором предусмотрена установка соответствующего компонента. Найти его можно на торрент-трекерах.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Нужно ли самостоятельно выполнять активацию программы?</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Нет, в данной сборке необходимые изменения уже внесены в установочные файлы. Для подготовки использовались наработки Team V.R, CGP и Ru-Board Co. Изменённые файлы интегрированы непосредственно в установщик, поэтому дополнительных действий со стороны пользователя не предусмотрено.</p>
+                            <p>При этом исходные версии файлов сохранены с расширением .bak. Если потребуется восстановить оригинальные файлы, достаточно убрать это расширение и заменить ими соответствующие изменённые файлы.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Какие фоновые компоненты Adobe отключены?</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>В сборке отключены следующие модули:</p>
+                            <ul>
+                                <li><strong>CRLogTransport.exe</strong> — компонент CRLog Transport Application.</li>
+                                <li><strong>Adobe Crash Processor.exe</strong> — средство обработки аварийных завершений Adobe.</li>
+                            </ul>
+                            <p>Файлы, необходимые для их первоначальной работы, сохранены с расширением .bak. При необходимости их можно восстановить, удалив указанное расширение.</p>
+                            <p>Кроме того, предусмотрено удаление Adobe Genuine Service, если этот компонент был установлен ранее вместе с другими продуктами Adobe. В текущий установочный пакет он не включён.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3 -->
+                <section class="faq-section" id="section-3">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Запуск и устранение ошибок
+                    </h2>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Photoshop сообщает о неисправимой ошибке при запуске</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Сообщение «Произошла неисправимая ошибка. Photoshop завершит работу» (An unrecoverable problem has occurred. Photoshop will now exit) может возникать при запуске Photoshop в Windows 10, работающей внутри устаревшей виртуальной машины.</p>
+                            <p>В таком случае рекомендуется использовать более современную версию программного обеспечения виртуализации либо перейти на Windows 11 в виртуальной среде. Это может устранить проблему, связанную с устаревшей конфигурацией виртуальной машины.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Ошибка об отсутствующем или повреждённом Adobe Creative Cloud</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Если при запуске Photoshop появляется уведомление о том, что Adobe Creative Cloud отсутствует или повреждён, причиной могут быть остаточные файлы и настройки от предыдущих установок Adobe.</p>
+                            <p>Для очистки системы воспользуйтесь официальной утилитой Adobe Creative Cloud Cleaner Tool.</p>
+                            <p>В программе очистки последовательно выберите пункты All, а затем Adobe Creative Cloud Desktop. После завершения процедуры повторно установите приложение, при запуске которого возникала ошибка.</p>
+                            <p>Такая очистка с последующей переустановкой проблемного приложения не должна затрагивать другие ранее установленные программы Adobe.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4 -->
+                <section class="faq-section" id="section-4">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-user-shield"></i>
+                        Учётная запись и сетевые возможности
+                    </h2>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Как получить доступ к онлайн-функциям Photoshop?</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Для использования сетевых возможностей программы необходимо авторизоваться в своей учётной записи Adobe. Откройте меню «Справка → Вход» (Help → Sign In) и выполните вход, следуя инструкциям на экране.</p>
+                            <p>Если после авторизации появится предложение начать пробный период, его можно закрыть нажатием на крестик в окне. Затем перезапустите Photoshop. После повторного запуска доступные онлайн-функции должны стать активными в соответствии с возможностями вашей учётной записи и региона.</p>
+                            <p>Пользователям из России следует также ознакомиться с разделом, посвящённым региональным ограничениям доступа к сервисам Adobe.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Не загружаются нейрофильтры или возникают ошибки при их скачивании</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Если Photoshop не позволяет загрузить Neural Filters, причиной могут быть повреждённые данные плагинов или некорректные файлы, оставшиеся от предыдущих установок.</p>
+                            <p>Попробуйте удалить содержимое каталога PluginData, расположенного по следующему пути:</p>
+                            <div class="path-block">C:\Users\&lt;имя пользователя&gt;\AppData\Roaming\Adobe\UXP\PluginsStorage\PHSP\27\Internal\com.adobe.nfp.gallery\PluginData</div>
+                            <p>Вместо 27 у вас может быть другая версия Photoshop. Если в каталоге присутствуют папки с несколькими номерами версий, например 25, 26 и 27, проверьте их и очистите соответствующие каталоги PluginData.</p>
+                            <p>После этого перезапустите Photoshop и попробуйте загрузить фильтры повторно.</p>
+                            <div class="warning-box">
+                                <strong>Важно!</strong> Удаление PluginData приведёт к потере ранее загруженных нейрофильтров. Поэтому после восстановления загрузки рекомендуется сразу установить все необходимые фильтры.
+                            </div>
+                            <p>Для пользователей из России дополнительно действуют региональные ограничения, описанные ниже.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Доступны ли генеративные инструменты искусственного интеллекта?</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Возможность использования генеративных функций Adobe зависит от типа учётной записи, наличия действующей подписки, региона и установленных компанией ограничений. Даже при наличии оплаченного доступа могут действовать лимиты на количество генераций.</p>
+                            <p>Некоторые генеративные возможности также могут быть доступны в течение пробного периода. Для регистрации и проверки доступности пробного доступа Adobe предоставляет страницу бесплатной пробной версии для бизнес-аккаунтов.</p>
+                            <p>Условия, продолжительность пробного периода и доступность функций могут меняться. Для пользователей из России дополнительно могут потребоваться средства обхода региональных ограничений. Перед использованием генеративных инструментов следует учитывать действующие правила Adobe и условия предоставления услуг.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5 -->
+                <section class="faq-section" id="section-5">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-globe"></i>
+                        Региональные ограничения
+                    </h2>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Ограничения онлайн-сервисов Adobe для пользователей из России</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Согласно информации, приведённой в исходном описании сборки, с конца апреля 2026 года пользователи из России столкнулись с ограничением доступа к онлайн-сервисам Adobe. Это может отражаться на авторизации, загрузке начального экрана, работе нейрофильтров и генеративных инструментов.</p>
+                            <p>Если доступ к онлайн-функциям ограничен по региональному признаку, использование VPN на уровне браузера может оказаться недостаточным, поскольку Photoshop и другие приложения Adobe обращаются к серверам напрямую.</p>
+                            <p>Для сетевого доступа приложений может потребоваться VPN-соединение, работающее на уровне всей системы и распространяющееся на трафик установленных программ.</p>
+                            <p>Если же проблема заключается исключительно в длительной загрузке начального экрана Photoshop, одним из возможных вариантов является настройка исходящих соединений Photoshop.exe в брандмауэре Windows. При этом следует учитывать, что ограничение сетевого доступа может привести к недоступности онлайн-функций программы.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6 -->
+                <section class="faq-section" id="section-6">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-sliders"></i>
+                        Настройка интерфейса
+                    </h2>
+
+                    <div class="faq-card open">
+                        <div class="faq-header">
+                            <span>Как установить несколько языков интерфейса Photoshop?</span>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Если требуется использовать Photoshop с двумя или более языками интерфейса и переключаться между ними стандартными средствами программы, можно выполнить повторную установку приложения на другом языке поверх уже установленной версии.</p>
+                            <p>После завершения установки в настройках интерфейса должен стать доступен выбор языка:</p>
+                            <div class="path-block">Редактирование → Настройки → Интерфейс → Язык интерфейса<br><small style="color: var(--ps-text-muted);">(Edit → Preferences → Interface → UI Language)</small></div>
+                            <p>Выберите необходимый язык и перезапустите Photoshop, если программа предложит это сделать. Таким образом можно использовать несколько установленных языковых вариантов без необходимости каждый раз полностью удалять приложение и устанавливать его заново.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+        </main>
+
+        <!-- RIGHT SIDEBAR / PANELS -->
+        <aside class="ps-panels">
+            <!-- PANEL: SEARCH & NAV -->
+            <div class="ps-panel-group">
+                <div class="ps-panel-header">
+                    <span>Быстрый поиск</span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="ps-panel-body">
+                    <input type="text" id="searchInput" class="ps-search" placeholder="Поиск по FAQ...">
+                </div>
+            </div>
+
+            <!-- PANEL: SECTIONS NAVIGATION -->
+            <div class="ps-panel-group" style="flex: 1;">
+                <div class="ps-panel-header">
+                    <span>Разделы / Слои</span>
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div class="ps-panel-body">
+                    <ul class="nav-list">
+                        <li><a href="#section-1"><i class="fa-regular fa-folder" style="margin-right: 6px;"></i> Установка и требования</a></li>
+                        <li><a href="#section-2"><i class="fa-regular fa-folder" style="margin-right: 6px;"></i> Состав сборки</a></li>
+                        <li><a href="#section-3"><i class="fa-regular fa-folder" style="margin-right: 6px;"></i> Запуск и ошибки</a></li>
+                        <li><a href="#section-4"><i class="fa-regular fa-folder" style="margin-right: 6px;"></i> Аккаунт и сеть</a></li>
+                        <li><a href="#section-5"><i class="fa-regular fa-folder" style="margin-right: 6px;"></i> Региональные ограничения</a></li>
+                        <li><a href="#section-6"><i class="fa-regular fa-folder" style="margin-right: 6px;"></i> Настройка интерфейса</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PANEL: INFO -->
+            <div class="ps-panel-group">
+                <div class="ps-panel-header">
+                    <span>Свойства документа</span>
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div class="ps-panel-body" style="font-size: 11px; color: var(--ps-text-muted);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <span>Разрешение:</span>
+                        <span style="color: var(--ps-text-main);">300 DPI</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <span>Цветовой профиль:</span>
+                        <span style="color: var(--ps-text-main);">sRGB IEC61966-2.1</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Формат:</span>
+                        <span style="color: var(--ps-text-main);">HTML5 Document</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- STATUS BAR -->
+    <footer class="ps-statusbar">
+        <div>Документ: FAQ_Photoshop_2026.psd (100%)</div>
+        <div>Doc: 1.4M / 0M</div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+                card.classList.toggle('open');
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('.faq-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'block';
+                    if (query.length > 2) {
+                        card.classList.add('open');
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Tool highlights
+        document.querySelectorAll('.ps-tool-icon').forEach(tool => {
+            tool.addEventListener('click', function() {
+                document.querySelectorAll('.ps-tool-icon').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
